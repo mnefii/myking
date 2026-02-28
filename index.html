@@ -97,6 +97,7 @@ let canvas=document.getElementById("canvas");
 let ctx=canvas.getContext("2d");
 let baseImage=new Image();
 let textXPct=0.5, textYPct=0.5;
+let previewX=0, previewY=0;
 
 document.getElementById("imageUpload").addEventListener("change",function(e){
   const reader=new FileReader();
@@ -111,12 +112,8 @@ document.getElementById("imageUpload").addEventListener("change",function(e){
   reader.readAsDataURL(e.target.files[0]);
 });
 
-let previewX = 0;
-let previewY = 0;
-
 canvas.addEventListener("click",function(e){
   const rect = canvas.getBoundingClientRect();
-
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
 
@@ -133,24 +130,12 @@ function drawPreview(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.drawImage(baseImage,0,0);
 
-  ctx.strokeStyle = "#00bfff";
-  ctx.lineWidth = 3;
+  ctx.strokeStyle="#00bfff";
+  ctx.lineWidth=3;
   ctx.beginPath();
-  ctx.arc(previewX, previewY, 20, 0, Math.PI * 2);
+  ctx.arc(previewX,previewY,20,0,Math.PI*2);
   ctx.stroke();
 }
-
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-
-  const x = (e.clientX - rect.left) * scaleX;
-  const y = (e.clientY - rect.top) * scaleY;
-
-  textXPct = x / canvas.width;
-  textYPct = y / canvas.height;
-
-  alert("Position Selected");
-});
 
 async function generate(){
   if(!baseImage.src){alert("Upload image");return;}
