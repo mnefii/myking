@@ -113,8 +113,16 @@ document.getElementById("imageUpload").addEventListener("change",function(e){
 
 canvas.addEventListener("click",function(e){
   const rect=canvas.getBoundingClientRect();
-  textXPct=(e.clientX-rect.left)/canvas.width;
-  textYPct=(e.clientY-rect.top)/canvas.height;
+
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
+
+  textXPct = x / canvas.width;
+  textYPct = y / canvas.height;
+
   alert("Position Selected");
 });
 
