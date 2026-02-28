@@ -1,199 +1,169 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My King #exqt</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+.hidden{display:none;}
+#loginBox{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#111;
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 0 30px rgba(0,191,255,0.5);
+  width:300px;
+}
+input,textarea{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+}
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#00bfff;
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{background:#009acd;}
+canvas{
+  max-width:95%;
+  margin-top:20px;
+  border:2px solid #00bfff;
+}
+h1{
+  margin-top:30px;
+  color:#00bfff;
+}
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;My King #exqt&lt;/title&gt;</p>
-<p class="p1">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"&gt;&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-family:Arial;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#000;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#fff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.hidden{display:none;}</p>
-<p class="p2"><br></p>
-<p class="p1">#loginBox{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>top:50%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>left:50%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transform:translate(-50%,-50%);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#111;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:40px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:15px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow:0 0 30px rgba(0,191,255,0.5);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:300px;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">input,textarea{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:90%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">button{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:12px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#00bfff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#000;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight:bold;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">button:hover{background:#009acd;}</p>
-<p class="p2"><br></p>
-<p class="p1">canvas{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>max-width:95%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:2px solid #00bfff;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">h1{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:30px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:#00bfff;</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="loginBox"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;My King #exqt&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="password" id="accessCode" placeholder="Enter Access Code"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="login()"&gt;Login&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p id="error" style="color:red;"&gt;&lt;/p&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="app" class="hidden"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;h1&gt;My King #exqt&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;input type="file" id="imageUpload" accept="image/*"&gt;</p>
-<p class="p1">&lt;br&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;canvas id="canvas"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;br&gt;</p>
-<p class="p1">&lt;input type="number" id="fontSize" value="92" placeholder="Font Size"&gt;</p>
-<p class="p1">&lt;input type="color" id="fontColor" value="#ffffff"&gt;</p>
-<p class="p1">&lt;br&gt;</p>
-<p class="p1">&lt;textarea id="usernames" rows="5" placeholder="Enter usernames (one per line)"&gt;&lt;/textarea&gt;</p>
-<p class="p1">&lt;br&gt;</p>
-<p class="p1">&lt;button onclick="generate()"&gt;Generate ZIP&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">const VALID_CODE="KING2025"; // 🔐 غيره اذا تبي</p>
-<p class="p2"><br></p>
-<p class="p1">if(localStorage.getItem("mk_auth")==="true"){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("loginBox").classList.add("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("app").classList.remove("hidden");</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">function login(){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const code=document.getElementById("accessCode").value;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if(code===VALID_CODE){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>localStorage.setItem("mk_auth","true");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>location.reload();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}else{</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("error").innerText="Wrong Code";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">let canvas=document.getElementById("canvas");</p>
-<p class="p1">let ctx=canvas.getContext("2d");</p>
-<p class="p1">let baseImage=new Image();</p>
-<p class="p1">let textXPct=0.5, textYPct=0.5;</p>
-<p class="p2"><br></p>
-<p class="p1">document.getElementById("imageUpload").addEventListener("change",function(e){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const reader=new FileReader();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>reader.onload=function(event){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>baseImage.onload=function(){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>canvas.width=baseImage.width;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>canvas.height=baseImage.height;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>ctx.drawImage(baseImage,0,0);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>baseImage.src=event.target.result;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>reader.readAsDataURL(e.target.files[0]);</p>
-<p class="p1">});</p>
-<p class="p2"><br></p>
-<p class="p1">canvas.addEventListener("click",function(e){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const rect=canvas.getBoundingClientRect();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>textXPct=(e.clientX-rect.left)/canvas.width;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>textYPct=(e.clientY-rect.top)/canvas.height;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>alert("Position Selected");</p>
-<p class="p1">});</p>
-<p class="p2"><br></p>
-<p class="p1">async function generate(){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if(!baseImage.src){alert("Upload image");return;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const fontSize=Number(document.getElementById("fontSize").value)||92;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const fontColor=document.getElementById("fontColor").value;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const usernames=document.getElementById("usernames").value</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.split("\n").map(u=&gt;u.trim()).filter(Boolean);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>if(!usernames.length){alert("Enter usernames");return;}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const zip=new JSZip();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>for(const username of usernames){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const c=document.createElement("canvas");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>c.width=canvas.width;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>c.height=canvas.height;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const cctx=c.getContext("2d");</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.drawImage(baseImage,0,0);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const x=c.width*textXPct;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const y=c.height*textYPct;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.font=`${fontSize}px Arial`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.fillStyle=fontColor;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.textAlign="center";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.textBaseline="middle";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.fillText("@"+username,x,y);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.font=`bold 28px Arial`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.fillStyle="rgba(255,255,255,0.6)";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.textAlign="right";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.textBaseline="bottom";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cctx.fillText("My King #exqt",c.width-15,c.height-15);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const blob=await new Promise(res=&gt;c.toBlob(res,"image/png"));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>zip.file(username+".png",blob);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const content=await zip.generateAsync({type:"blob"});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const url=URL.createObjectURL(content);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const a=document.createElement("a");</p>
-<p class="p1"><span class="Apple-converted-space">  </span>a.href=url;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>a.download="MyKing.zip";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>a.click();</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div id="loginBox">
+  <h2>My King #exqt</h2>
+  <input type="password" id="accessCode" placeholder="Enter Access Code">
+  <button onclick="login()">Login</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="app" class="hidden">
+
+<h1>My King #exqt</h1>
+<input type="file" id="imageUpload" accept="image/*"><br>
+<canvas id="canvas"></canvas><br><br>
+<input type="number" id="fontSize" value="92">
+<input type="color" id="fontColor" value="#ffffff"><br>
+<textarea id="usernames" rows="5" placeholder="Enter usernames (one per line)"></textarea><br>
+<button onclick="generate()">Generate ZIP</button>
+
+</div>
+
+<script>
+const VALID_CODE="KING2025";
+
+if(localStorage.getItem("mk_auth")==="true"){
+  document.getElementById("loginBox").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
+}
+
+function login(){
+  const code=document.getElementById("accessCode").value;
+  if(code===VALID_CODE){
+    localStorage.setItem("mk_auth","true");
+    location.reload();
+  }else{
+    document.getElementById("error").innerText="Wrong Code";
+  }
+}
+
+let canvas=document.getElementById("canvas");
+let ctx=canvas.getContext("2d");
+let baseImage=new Image();
+let textXPct=0.5, textYPct=0.5;
+
+document.getElementById("imageUpload").addEventListener("change",function(e){
+  const reader=new FileReader();
+  reader.onload=function(event){
+    baseImage.onload=function(){
+      canvas.width=baseImage.width;
+      canvas.height=baseImage.height;
+      ctx.drawImage(baseImage,0,0);
+    }
+    baseImage.src=event.target.result;
+  }
+  reader.readAsDataURL(e.target.files[0]);
+});
+
+canvas.addEventListener("click",function(e){
+  const rect=canvas.getBoundingClientRect();
+  textXPct=(e.clientX-rect.left)/canvas.width;
+  textYPct=(e.clientY-rect.top)/canvas.height;
+  alert("Position Selected");
+});
+
+async function generate(){
+  if(!baseImage.src){alert("Upload image");return;}
+  const fontSize=Number(document.getElementById("fontSize").value)||92;
+  const fontColor=document.getElementById("fontColor").value;
+  const usernames=document.getElementById("usernames").value
+  .split("\n").map(u=>u.trim()).filter(Boolean);
+
+  if(!usernames.length){alert("Enter usernames");return;}
+
+  const zip=new JSZip();
+
+  for(const username of usernames){
+    const c=document.createElement("canvas");
+    c.width=canvas.width;
+    c.height=canvas.height;
+    const cctx=c.getContext("2d");
+
+    cctx.drawImage(baseImage,0,0);
+
+    const x=c.width*textXPct;
+    const y=c.height*textYPct;
+
+    cctx.font=fontSize+"px Arial";
+    cctx.fillStyle=fontColor;
+    cctx.textAlign="center";
+    cctx.textBaseline="middle";
+    cctx.fillText("@"+username,x,y);
+
+    cctx.font="bold 28px Arial";
+    cctx.fillStyle="rgba(255,255,255,0.6)";
+    cctx.textAlign="right";
+    cctx.textBaseline="bottom";
+    cctx.fillText("My King #exqt",c.width-15,c.height-15);
+
+    const blob=await new Promise(res=>c.toBlob(res,"image/png"));
+    zip.file(username+".png",blob);
+  }
+
+  const content=await zip.generateAsync({type:"blob"});
+  const url=URL.createObjectURL(content);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="MyKing.zip";
+  a.click();
+}
+</script>
+
 </body>
 </html>
